@@ -1,9 +1,16 @@
 const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.conf.js');
+const webpack = require('webpack');
 
 module.exports = merge(baseWebpackConfig, {
-    // devtool: 'inline-source-map',
+    mode: 'development',
+    devtool: 'inline-source-map',
     devServer: {
-        contentBase: './dist'
-    }
+        contentBase: './dist',
+        hot: true
+    },
+    plugins: [
+        new webpack.NamedModulesPlugin(),
+        new webpack.HotModuleReplacementPlugin()
+    ]
 });

@@ -5,7 +5,7 @@ function component() {
     var element = document.createElement('div');
 
     // lodash 是由当前 script 脚本 import 导入进来的
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    element.innerHTML = _.join(['Helloccccccccc', 'webpack'], ' ');
     element.classList.add('hello');
 
     return element;
